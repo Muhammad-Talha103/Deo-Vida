@@ -79,7 +79,7 @@ function startSlider() {
 
         nextSlide();
 
-    }, 8000);
+    }, 6000);
 
 }
 
