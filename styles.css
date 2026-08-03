@@ -1,769 +1,669 @@
-/* =====================================================
-   RESET & GLOBAL STYLES
-===================================================== */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* Poppins ko pure project mein inherit karne ke liye */
-    font-family: 'Poppins', sans-serif; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #111;
-    margin: 0;
-    padding-top: 70px; /* Header scaling gap */
-    overflow-x: hidden;
-    
-    /* Poppins font ke text ko ultra-clean aur sharp banane ke liye */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+  background: #111;
+  margin: 0;
+  padding-top: 70px;
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-/* =====================================================
-   HEADER
-===================================================== */
+
+/* HEADER*/
 
 .site-header {
+  position: fixed;
 
-    position: fixed;
+  top: 0;
+  left: 0;
 
-    top: 0;
-    left: 0;
+  width: 100%;
 
-    width: 100%;
+  height: clamp(65px, 5vw, 75px);
 
-    /* Header height ko bhi clamp se scale kiya hai taakay logo comfortably fit rahe */
-    height: clamp(65px, 5vw, 75px);
+  background: #121214;
 
-    background: #121214;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  z-index: 9999;
 
-    z-index: 9999;
-
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
-
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header-container {
+  width: 100%;
 
-    width: 100%;
+  max-width: 1400px;
 
-    max-width: 1400px;
+  display: flex;
 
-    display: flex;
+  justify-content: center;
 
-    justify-content: center;
+  align-items: center;
 
-    align-items: center;
-
-    padding: 0 25px;
-
+  padding: 0 25px;
 }
 
-/* =====================================================
-   LOGO (Screen responsive size slightly increased)
-===================================================== */
+/* LOGO */
 
 .logo {
+  display: block;
 
-    display: block;
+  width: auto;
 
-    width: auto;
+  height: clamp(48px, 4.5vw, 64px);
 
-    /* Mobile par 48px se shuru hoga, screen ke sath scale hotay hue Desktop par max 64px tak jayega */
-    height: clamp(48px, 4.5vw, 64px);
+  object-fit: contain;
 
-    object-fit: contain;
+  user-select: none;
 
-    user-select: none;
+  -webkit-user-drag: none;
 
-    -webkit-user-drag: none;
-
-    transition: height 0.3s ease; /* Smooth scaling performance ke liye */
-
+  transition: height 0.3s ease;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
-
-/* ==========================
-   HERO SLIDER
-========================== */
+/* HERO SLIDER */
 .hero {
-    width: 100%;
-    overflow: hidden;
-    background: #111114;
-    /* Background color jab contain ke waqt sides par space bache */
+  width: 100%;
+  overflow: hidden;
+  background: #111114;
 }
 
-/* ==========================
-   SLIDER CONTAINER
-========================== */
+/*SLIDER CONTAINER*/
 .slider {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-
-    /* Base / Mobile Height (220px se shuru ho kar scale hogi) */
-    height: clamp(220px, 56.25vw, 450px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: clamp(220px, 56.25vw, 450px);
 }
 
-/* ==========================
-   SLIDES
-========================== */
+/* SLIDES*/
 .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 
 .slide.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* ==========================
-   IMAGE (Fully Visible & Optimized)
-========================== */
 .slide img {
-    width: 100%;
-    height: 100%;
-    display: block;
-
-    /* Crop hone se bachane ke liye CONTAIN use kiya hai */
-    object-fit: contain;
-    object-position: center center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center center;
 }
 
 /* ==========================
    TABLET (768px - 1199px)
 ========================== */
 @media (min-width: 768px) and (max-width: 1199px) {
-    .slider {
-        height: clamp(400px, 50vw, 600px);
-    }
+  .slider {
+    height: clamp(400px, 50vw, 600px);
+  }
 }
 
 /* ==========================
    DESKTOP (1200px+)
 ========================== */
 @media (min-width: 1200px) {
-    .hero {
-        margin-bottom: 60px;
-    }
+  .hero {
+    margin-bottom: 60px;
+  }
 
-    .slider {
-        height: clamp(600px, 45vw, 750px);
-    }
+  .slider {
+    height: clamp(600px, 45vw, 750px);
+  }
 }
 
 /* ==========================
    LARGE SCREENS (1600px+)
-   Yahan aakar slider fixed max-height par freeze ho jayega
 ========================== */
 @media (min-width: 1600px) {
-    .slider {
-        /* Ek fixed max point jiske baad height mazeed nahi barhegi */
-        height: 750px;
-    }
+  .slider {
+    height: 750px;
+  }
 }
 
-/* =====================================================
-   OVERLAY
-===================================================== */
+/*OVERLAY*/
 
 .overlay {
+  position: absolute;
 
-    position: absolute;
+  inset: 0;
 
-    inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
 
-    background: linear-gradient(rgba(0, 0, 0, .35),
-            rgba(0, 0, 0, .45));
-
-    z-index: 2;
-
+  z-index: 2;
 }
 
-/* =====================================================
-   BUTTONS
-===================================================== */
+/*BUTTONS */
 
 .slider-btn {
+  position: absolute;
 
-    position: absolute;
+  top: 50%;
 
-    top: 50%;
+  transform: translateY(-50%);
 
-    transform: translateY(-50%);
+  width: 54px;
 
-    width: 54px;
+  height: 54px;
 
-    height: 54px;
+  border: none;
 
-    border: none;
+  border-radius: 50%;
 
-    border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
 
-    background: rgba(255, 255, 255, .12);
+  color: #fff;
 
-    color: #fff;
+  font-size: 24px;
 
-    font-size: 24px;
+  cursor: pointer;
 
-    cursor: pointer;
+  backdrop-filter: blur(8px);
 
-    backdrop-filter: blur(8px);
+  transition: 0.3s;
 
-    transition: .3s;
-
-    z-index: 5;
-
+  z-index: 5;
 }
 
 .slider-btn:hover {
+  background: #ffffff;
 
-    background: #ffffff;
-
-    color: #111;
-
+  color: #111;
 }
 
 .prev {
-
-    left: 25px;
-
+  left: 25px;
 }
 
 .next {
-
-    right: 25px;
-
+  right: 25px;
 }
 
-/* =====================================================
-   DOTS
-===================================================== */
+/*DOTS*/
 
 .slider-dots {
+  position: absolute;
 
-    position: absolute;
+  bottom: 35px;
 
-    bottom: 35px;
+  left: 50%;
 
-    left: 50%;
+  transform: translateX(-50%);
 
-    transform: translateX(-50%);
+  display: flex;
 
-    display: flex;
+  gap: 12px;
 
-    gap: 12px;
-
-    z-index: 5;
-
+  z-index: 5;
 }
 
 .dot {
+  width: 12px;
 
-    width: 12px;
+  height: 12px;
 
-    height: 12px;
+  border-radius: 50%;
 
-    border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
 
-    background: rgba(255, 255, 255, .45);
+  cursor: pointer;
 
-    cursor: pointer;
-
-    transition: .35s;
-
+  transition: 0.35s;
 }
 
 .dot.active {
+  background: #fff;
 
-    background: #fff;
-
-    transform: scale(1.25);
-
+  transform: scale(1.25);
 }
 
-/* =====================================================
-   DESKTOP
-===================================================== */
+/* DESKTOP */
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
+  .site-header {
+    height: 80px;
+  }
 
-    .site-header {
-
-        height: 80px;
-
-    }
-
-    .logo {
-
-        height: 70px;
-
-    }
-
+  .logo {
+    height: 70px;
+  }
 }
 
-/* =====================================================
-   TABLET
-===================================================== */
+/* TABLET */
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
+  .slider-btn {
+    width: 46px;
 
-    .slider-btn {
+    height: 46px;
 
-        width: 46px;
-
-        height: 46px;
-
-        font-size: 20px;
-
-    }
-
+    font-size: 20px;
+  }
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
+  .site-header {
+    height: 65px;
+  }
 
-    .site-header {
+  .logo {
+    height: 55px;
+  }
 
-        height: 65px;
+  .slider-btn {
+    width: 42px;
 
-    }
+    height: 42px;
 
-    .logo {
+    font-size: 18px;
+  }
 
-        height: 55px;
+  .prev {
+    left: 12px;
+  }
 
-    }
+  .next {
+    right: 12px;
+  }
 
-    .slider-btn {
+  .slider-dots {
+    bottom: 20px;
+  }
 
-        width: 42px;
+  .dot {
+    width: 10px;
 
-        height: 42px;
-
-        font-size: 18px;
-
-    }
-
-    .prev {
-
-        left: 12px;
-
-    }
-
-    .next {
-
-        right: 12px;
-
-    }
-
-    .slider-dots {
-
-        bottom: 20px;
-
-    }
-
-    .dot {
-
-        width: 10px;
-
-        height: 10px;
-
-    }
-
+    height: 10px;
+  }
 }
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+/* SMALL MOBILE*/
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
+  .logo {
+    height: 50px;
+  }
 
-    .logo {
+  .slider-btn {
+    width: 38px;
 
-        height: 50px;
+    height: 38px;
 
-    }
-
-    .slider-btn {
-
-        width: 38px;
-
-        height: 38px;
-
-        font-size: 16px;
-
-    }
-
+    font-size: 16px;
+  }
 }
-
-/* =====================================================
-   HERO COPY SECTION (Color-Locked & Fixed Visibility)
-===================================================== */
 
 .hero-copy-section {
-    width: 100%;
-    background: #111114 !important;
-    padding: clamp(20px, 3vw, 40px) 24px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  background: #111114 !important;
+  padding: clamp(20px, 3vw, 40px) 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-copy-container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* =====================================================
-   TYPOGRAPHY & HEADINGS (Fully Readable on Dark Mode)
-===================================================== */
+/* ======================
+   TYPOGRAPHY & HEADINGS 
+========================= */
 
 .hero-title {
-    font-size: clamp(30px, 4.5vw, 54px); 
-    font-weight: 800;
-    line-height: 1.15;
-    color: #FFFFFF !important; /* Pure White Locked */
-    letter-spacing: -0.02em;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
+  font-size: clamp(30px, 4.5vw, 54px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff !important; /* Pure White Locked */
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
 }
 
-/* "Live concerts." Highlight Fix (Ab bilkul clear & bright nazar aayega) */
 .hero-title .highlight {
-    color: #FFFFFF !important;
-    background: linear-gradient(135deg, #FFFFFF 0%, #E4E4E7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: initial !important; /* Transparent fix: fallback to solid color */
-    display: inline-block;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Subtle glow for extreme clarity */
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: initial !important;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Sub-heading inside Title */
 .hero-title .sub-title {
-    font-weight: 600;
-    color: #D4D4D8 !important; /* High contrast soft gray */
-    font-size: 0.85em;
+  font-weight: 600;
+  color: #d4d4d8 !important;
+  font-size: 0.85em;
 }
 
 /* Description Text */
 .hero-description {
-    max-width: 720px;
-    margin: 16px auto 0 auto; 
-    font-size: clamp(15px, 1.8vw, 18px); 
-    line-height: 1.6;
-    color: #A1A1AA !important; /* Increased contrast for readability */
-    font-weight: 400;
+  max-width: 720px;
+  margin: 16px auto 0 auto;
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.6;
+  color: #a1a1aa !important;
+  font-weight: 400;
 }
 
 /* Bold Text inside paragraph */
 .hero-description strong {
-    color: #FFFFFF !important; /* Bright White for highlighted key terms */
-    font-weight: 600;
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
-/* =====================================================
+/* ======================
    RESPONSIVE ADJUSTMENTS
-===================================================== */
+========================= */
 
 @media (max-width: 600px) {
-    .hero-copy-section {
-        padding: 16px 20px;
-    }
-    
-    .hero-description {
-        margin-top: 12px;
-    }
+  .hero-copy-section {
+    padding: 16px 20px;
+  }
+
+  .hero-description {
+    margin-top: 12px;
+  }
 }
-/* =====================================================
-   FOLLOW SECTION (Fixed & Color-Locked for All Modes)
-===================================================== */
+/* ======================
+   FOLLOW SECTION
+========================= */
 
 .follow-section {
-    width: 100%;
-    padding: 30px 20px 80px;
-    text-align: center;
-    background: #111114 !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  padding: 30px 20px 80px;
+  text-align: center;
+  background: #111114 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Toggle Button (Color Fixed across Light/Dark modes) */
+/* Toggle Button  */
 .follow-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 28px;
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 30px;
-    background: #E6E6E8 !important; /* Official Background Locked */
-    color: #121214 !important;      /* Official Text Color Locked */
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    
-    /* System auto-dark mode disable overlay */
-    color-scheme: light !important; 
-    -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 28px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 30px;
+  background: #e6e6e8 !important;
+  color: #121214 !important;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color-scheme: light !important;
+  -webkit-appearance: none;
 }
 
-/* Force Text & Arrow inside Follow Button to stay exact color */
 .follow-btn span,
 .follow-btn .btn-arrow {
-    color: #121214 !important;
-    stroke: #121214 !important;
+  color: #121214 !important;
+  stroke: #121214 !important;
 }
 
 .follow-btn:hover {
-    background: #FFFFFF !important;
-    color: #121214 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+  background: #ffffff !important;
+  color: #121214 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
 }
 
 .follow-btn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 /* ARROW ICON ANIMATION */
 .btn-arrow {
-    transform: rotate(0deg); 
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotate(0deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .follow-btn.active .btn-arrow,
 .follow-card.show ~ .follow-btn .btn-arrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Card Container */
 .follow-card {
-    width: 100%;
-    max-width: 640px;
-    margin-top: 0;
-    background: rgba(26, 26, 30, 0.7) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 20px;
-    padding: 0 28px;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.3s ease, 
-                padding 0.3s ease, 
-                margin 0.3s ease,
-                visibility 0.3s ease;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 0;
+  background: rgba(26, 26, 30, 0.7) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px;
+  padding: 0 28px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease,
+    padding 0.3s ease,
+    margin 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .follow-card.show {
-    max-height: 500px;
-    opacity: 1;
-    visibility: visible;
-    margin-top: 24px;
-    padding: 28px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  margin-top: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Text & Labels */
 .company-name {
-    font-size: 22px;
-    font-weight: 700;
-    color: #FFFFFF !important;
-    margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 8px;
 }
 
 .address {
-    font-size: 14px;
-    color: #A0A0A6 !important;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  font-size: 14px;
+  color: #a0a0a6 !important;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .address-label {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #71717A !important;
-    font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a !important;
+  font-weight: 600;
 }
 
 /* Social Buttons Container */
 .social-links {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 /* Base Social Link Color Lock */
 .social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #F4F4F5 !important;
-    background: #222226 !important;
-    border: 1px solid rgba(255, 255, 255, 0.06) !important;
-    padding: 12px 22px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #f4f4f5 !important;
+  background: #222226 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .social-link span {
-    color: #F4F4F5 !important;
+  color: #f4f4f5 !important;
 }
 
 /* OFFICIAL INSTAGRAM HOVER COLOR LOCK */
 .social-link.instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
-    color: #FFFFFF !important;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  ) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
 }
 
 .social-link.instagram:hover span,
 .social-link.instagram:hover svg {
-    color: #FFFFFF !important;
-    stroke: #FFFFFF !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 /* OFFICIAL FACEBOOK HOVER COLOR LOCK */
 .social-link.facebook:hover {
-    background: #1877F2 !important;
-    color: #FFFFFF !important;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3);
+  background: #1877f2 !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3);
 }
 
 .social-link.facebook:hover span,
 .social-link.facebook:hover svg {
-    color: #FFFFFF !important;
-    fill: #FFFFFF !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 /* Mobile Alignment */
 @media (max-width: 600px) {
-    .social-links {
-        flex-direction: column;
-        width: 100%;
-    }
-    .social-link {
-        width: 100%;
-        justify-content: center;
-    }
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+  }
+  .social-link {
+    width: 100%;
+    justify-content: center;
+  }
 }
-/* =====================================================
-   SITE FOOTER (Centered Text & High Contrast Colors)
-===================================================== */
+
+/* SITE FOOTER */
 
 .site-footer {
-    width: 100%;
-    background: #0E0E10;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 32px 24px;
-    margin-top: auto;
+  width: 100%;
+  background: #0e0e10;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 32px 24px;
+  margin-top: auto;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; /* Sab elements ko ek line me center karne ke liye */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 }
 
-/* Copyright Text (High Visibility & Bright Color) */
 .copyright-text {
-    font-size: 14px;
-    color: #E4E4E7; /* Crisp white-gray color for ultra clear visibility */
-    font-weight: 400;
-    letter-spacing: 0.02em;
+  font-size: 14px;
+  color: #e4e4e7;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .copyright-text strong {
-    color: #FFFFFF; /* Pure white for company name */
-    font-weight: 600;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 /* Back to Top Button */
 .scroll-top-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #1A1A1E;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #F4F4F5; /* Highly readable button text */
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1a1e;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f4f4f5; /* Highly readable button text */
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-top-btn svg {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* Scroll Button Hover Effect */
 .scroll-top-btn:hover {
-    background: #FFFFFF;
-    color: #121214;
-    border-color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  color: #121214;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 
 .scroll-top-btn:hover svg {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .scroll-top-btn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }

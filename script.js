@@ -1,6 +1,6 @@
-// ======================================
-// DEO VIDA HERO SLIDER
-// ======================================
+// =============
+// HERO SLIDER
+// =============
 
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
@@ -11,9 +11,9 @@ const nextBtn = document.querySelector(".next");
 let currentSlide = 0;
 let autoSlide;
 
-// ======================================
+// =============
 // SHOW SLIDE
-// ======================================
+// =============
 
 function showSlide(index) {
 
@@ -49,9 +49,9 @@ function showSlide(index) {
 
 }
 
-// ======================================
+// =============
 // NEXT
-// ======================================
+// =============
 
 function nextSlide() {
 
@@ -59,9 +59,9 @@ function nextSlide() {
 
 }
 
-// ======================================
+// =============
 // PREVIOUS
-// ======================================
+// =============
 
 function previousSlide() {
 
@@ -69,9 +69,9 @@ function previousSlide() {
 
 }
 
-// ======================================
+// =============
 // AUTO PLAY
-// ======================================
+// =============
 
 function startSlider() {
 
@@ -89,9 +89,9 @@ function stopSlider() {
 
 }
 
-// ======================================
+// =============
 // BUTTON EVENTS
-// ======================================
+// =============
 
 nextBtn.addEventListener("click", () => {
 
@@ -113,9 +113,9 @@ prevBtn.addEventListener("click", () => {
 
 });
 
-// ======================================
+// =============
 // DOTS
-// ======================================
+// =============
 
 dots.forEach((dot, index) => {
 
@@ -131,9 +131,9 @@ dots.forEach((dot, index) => {
 
 });
 
-// ======================================
+// =============
 // PAUSE ON HOVER
-// ======================================
+// =============
 
 const slider = document.querySelector(".slider");
 
@@ -141,9 +141,9 @@ slider.addEventListener("mouseenter", stopSlider);
 
 slider.addEventListener("mouseleave", startSlider);
 
-// ======================================
+// =============
 // MOBILE SWIPE
-// ======================================
+// =============
 
 let touchStartX = 0;
 let touchEndX = 0;
@@ -180,22 +180,18 @@ slider.addEventListener("touchend", (e) => {
 
 });
 
-// ======================================
+// =======
 // START
-// ======================================
-
+// =======
 showSlide(0);
 
 startSlider();
 
 
 
-// ======================================
+// ==============
 // FOLLOW BUTTON
-// ======================================
-
-
-
+// ==============
 
 const followBtn = document.getElementById('followBtn');
 const followCard = document.getElementById('followCard');
