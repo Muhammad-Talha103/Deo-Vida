@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts: Poppins (Regular, Medium, Semi-Bold, Bold) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Deo Vida Ltd</title>
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+            HEADER
+    ============================ -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <img
+                src="image/logo.png"
+                alt="Deo Vida Ltd"
+                class="logo">
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ===========================
+            HERO SLIDER
+    ============================ -->
+
+    <section class="hero">
+
+        <div class="slider">
+
+            <!-- Slide 1 -->
+
+            <div class="slide active">
+
+                <img
+                     src="image/concert-mobile.jpg"
+                    alt="Concert Image 1">
+
+            </div>
+
+            <!-- Slide 2 -->
+
+            <div class="slide">
+
+                <img
+                   src="image/concert-mobile.jpg"
+                    alt="Concert Image 2">
+
+            </div>
+
+            <!-- Slide 3 -->
+
+            <div class="slide">
+
+                <img
+                      src="image/concert-mobile.jpg"
+                    alt="Concert Image 3">
+
+            </div>
+
+            <!-- Dark Overlay -->
+
+            <div class="overlay"></div>
+
+            <!-- Previous -->
+
+            <button class="slider-btn prev">
+
+                &#10094;
+
+            </button>
+
+            <!-- Next -->
+
+            <button class="slider-btn next">
+
+                &#10095;
+
+            </button>
+
+            <!-- Dots -->
+
+            <div class="slider-dots">
+
+                <span class="dot active"></span>
+
+                <span class="dot"></span>
+
+                <span class="dot"></span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- ===================================
+        HERO COPY SECTION
+=================================== -->
+
+<section class="hero-copy-section">
+
+    <div class="hero-copy-container">
+
+        <h1 class="hero-title">
+            <span class="highlight">Live concerts.</span>
+            Meet the icons face to face.
+            <span class="sub-title">From the Philippines to the UK.</span>
+        </h1>
+
+        <p class="hero-description">
+            <strong>Deo Vida Ltd</strong> is a UK-registered multimedia company dedicated to bringing the best <strong>Filipino live performances</strong> to audiences across the <strong>United Kingdom</strong>.
+        </p>
+
+    </div>
+
+</section>
+<!-- ===================================
+     FOLLOW US SECTION
+=================================== -->
+
+<section class="follow-section">
+
+    <button id="followBtn" class="follow-btn">
+        <span>Follow Us</span>
+        <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+
+    <div id="followCard" class="follow-card">
+
+        <h2 class="company-name">Deo Vida Ltd</h2>
+
+        <p class="address">
+            <span class="address-label">Correspondence Address</span>
+            66, Paul Street, London, EC2A 4NA
+        </p>
+
+        <div class="social-links">
+
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/deovida.uk/" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+                <div class="icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="18" cy="6" r="1.2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span>Connect on Instagram</span>
+            </a>
+
+            <!-- Facebook Link -->
+            <a href="https://www.facebook.com/profile.php?id=61592663856761" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                <div class="icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 8h2V4h-2c-2.2 0-4 1.8-4 4v2H8v4h2v6h4v-6h2.5l.5-4H14V8z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span>Connect on Facebook</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================
+        FOOTER
+=================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <p class="copyright-text">
+            &copy; 2026 <strong>Deo Vida Ltd</strong>. All rights reserved.
+        </p>
+
+        <!-- Back to Top Button -->
+        <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <span>Back to top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
+
+    </div>
+
+</footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
